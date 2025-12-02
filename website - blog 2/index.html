@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>katsunia</title>
+
+    <link rel="stylesheet" href="styles.css?v=1.0.26" />
+    <link rel="stylesheet" href="mycss.css" />
+
+    <link rel="icon" type="image/png" href="bear.png" />
+    <link rel="icon" type="image/png" href="spotify.png" />
+    <link rel="icon" type="image/png" href="throne.png" />
+    <link rel="icon" type="image/png" href="twitch.png" />
+
+    <style>
+      @font-face {
+        font-family: "Quicksand";
+        src: url("fonts/Quicksand-Medium.ttf") format("truetype");
+      }
+
+      body {
+        margin: 0;
+        background: black;
+        font-family: "Quicksand", sans-serif;
+        overflow-x: hidden;
+        opacity: 0;
+        animation: fadeIn 3s ease-in-out forwards;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .discord-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 2px solid #fff;
+        padding: 0.5rem 1rem;
+        margin-top: 1.5rem;
+        width: 16rem;
+        gap: 0.5rem;
+        border-radius: 10px;
+        box-shadow: 0 0 20px #FEDFFE;
+        
+        
+      }
+
+      .join-btn {
+        padding: 6px 16px;
+        background: transparent;
+        color: #fff;
+        font-family: "Quicksand";
+        font-size: 0.875rem;
+        font-weight: 600;
+        text-transform: lowercase;
+        border-radius: 8px;
+        text-decoration: none;
+        border: none;
+        outline: none;
+        text-shadow: 0 0 8px #fff;
+        transition: transform 0.2s ease, text-shadow 0.2s ease;
+      }
+
+      .join-btn:hover {
+        transform: scale(1.05);
+        text-shadow: 0 0 12px #fff;
+      }
+
+      .discord-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 15px;
+      }
+
+      /* .audio-controls {
+        display: none;
+      } */
+
+      .play-button {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        transition: box-shadow 0.3s ease;
+        border: 2px solid #fff !important;
+      }
+
+      .play-button:hover {
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+      }
+
+      .social-icons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 14rem;
+        margin-top: 1.5rem;
+      }
+
+      .social-icons a .group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        transition: transform 0.3s ease;
+      }
+
+      .social-icons a .group:hover {
+        transform: scale(1.1);
+      }
+
+      .social-icons img,
+      .social-icons svg {
+        width: 28px;
+        height: 28px;
+        transition: all 0.3s ease;
+        filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.3))
+          drop-shadow(0 0 6px rgba(255, 255, 255, 0.2));
+      }
+
+      .social-icons a .group:hover img,
+      .social-icons a .group:hover svg {
+        filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.4))
+          drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+      }
+
+      .social-icons a[href*="twitch"] .group img {
+        width: 36px;
+        height: 36px;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div
+      id="site-content"
+      class="main-content flex flex-col justify-center items-center w-full"
+    >
+      <div class="flex flex-col justify-center items-center">
+        <img
+          class="drop-shadow-lg mb-4 rounded-full w-20 h-20"
+          src="https://i.pinimg.com/736x/1b/e8/6c/1be86c727a191fbdfce0898bdb84d5ec.jpg"
+          alt="Profile Picture"
+          loading="lazy"
+          width="80"
+          height="80"
+        />
+      </div>
+
+      <div class="typewriter-container text-xl relative inline-block">
+        <span
+          id="typewriter"
+          class="typing-text absolute top-0 text-sm inline-flex items-center"
+          aria-live="polite"
+        ></span>
+      </div>
+
+      <div class="social-icons">
+        <a
+          target="_blank"
+          href="https://www.twitch.tv/katsunia"
+          aria-label="Follow on Twitch"
+          rel="noopener"
+        >
+          <div class="group">
+            <img src="twitch.png" alt="Twitch Icon" loading="lazy" />
+          </div>
+        </a>
+        <a
+          target="_blank"
+          href="https://x.com/kirisoki"
+          aria-label="Follow on X"
+          rel="noopener"
+        >
+          <div class="group">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                fill="white"
+                d="M2.367 3L9.462 13.141 2.74 21h2.641l5.264-6.17L14.961 21h6.91L14.449 10.375 20.74 3h-2.599l-4.87 5.688L9.299 3H2.367zm3.84 2h2.049l9.777 14h-2.031L6.207 5z"
+              />
+            </svg>
+          </div>
+        </a>
+        <a
+          target="_blank"
+          href="https://throne.com/katsunia"
+          aria-label="Support on Throne"
+          rel="noopener"
+        >
+          <div class="group">
+            <img src="throne.png" alt="Throne Icon" loading="blegh" />
+          </div>
+        </a>
+        <a
+          target="_blank"
+          href="https://open.spotify.com/user/nessaelizae?si=8dc0f253c01446d5"
+          aria-label="Spotify Profile"
+          rel="noopener"
+        >
+          <div class="group">
+            <img src="spotify.png" alt="Spotify Icon" loading="blegh" />
+          </div>
+        </a>
+      </div>
+
+      <div class="discord-card">
+        <div class="flex items-center gap-4 discord-text">
+          <img
+            src="https://static-cdn.jtvnw.net/emoticons/v2/emotesv2_cabad00b8cbe47a49bc1e2b05c26df8d/static/light/3.0"
+            alt="Discord Server Icon"
+            class="discord-icon"
+            width="64"
+            height="64"
+            loading="blegh"
+          />
+          <div class="flex flex-col text-white">
+            <span>mortuary</span>
+            <div class="member-stats">
+              <span id="onlineCount">...</span> online •
+              <span id="totalCount">...</span> total
+            </div>
+          </div>
+        </div>
+        <a
+          href="https://discord.gg/katsunia"
+          target="_blank"
+          class="join-btn"
+          rel="noopener"
+          >join</a
+        >
+      <div class="audio-controls fixed bottom-4 left-4 flex flex-col items-center gap-2">
+        <div class="audio-buttons flex items-center gap-2">
+          <button
+            id="playButton"
+            class="play-button bg-transparent border-2 border-white rounded-full w-10 h-10 flex items-center justify-center cursor-pointer hover:border-white transition-all duration-300"
+            aria-label="Play/Pause Audio"
+          >
+            <svg
+              id="playIcon"
+              class="play-icon w-6 h-6 fill-white"
+              viewBox="0 0 24 24"
+            >
+              <path d="M8 5v14l11-7z" />
+            </svg>
+            <svg
+              id="pauseIcon"
+              class="pause-icon w-6 h-6 fill-white hidden"
+              viewBox="0 0 24 24"
+            >
+              <path d="M6 19h4V5H6zm8-14v14h4V5z" />
+            </svg>
+          </button>
+          <input type="range" id="volumeSlider" class="volume-slider" min="0" max="100" value="20" aria-label="Volume Control" />
+    </div>
+        </div>
+        <audio
+          id="audioPlayer"
+          src="song.mp3"
+        ></audio>
+      </div>
+    </div>
+    <script>
+
+      const audioPlayer = document.getElementById("audioPlayer");
+      const playButton = document.getElementById("playButton");
+      const playIcon = document.getElementById("playIcon");
+      const pauseIcon = document.getElementById("pauseIcon");
+      const volumeSlider = document.getElementById("volumeSlider");
+
+      playButton.addEventListener("click", () => {
+        if (audioPlayer.paused) {
+          audioPlayer.play();
+          playIcon.classList.add("hidden");
+          pauseIcon.classList.remove("hidden");
+        } else {
+          audioPlayer.pause();
+          playIcon.classList.remove("hidden");
+          pauseIcon.classList.add("hidden");
+        }
+      });
+
+      volumeSlider.addEventListener("input", (e) => {
+        audioPlayer.volume = e.target.value / 100;
+      });
+
+      const typewriterPhrases = [
+        "hi im nesi ♡",
+        "i'll stream when i'm not busy, mainly at night c:",
+        "join discord for updates",
+        "tysm for being here ♡",
+      ];
+      const typewriterDisplay = document.getElementById("typewriter");
+      let phraseIndex = 0;
+      let charIndex = 0;
+      const typingSpeed = 100;
+      const erasingSpeed = 50;
+      const delayBetweenPhrases = 1500;
+
+      function typeWriter() {
+        if (charIndex < typewriterPhrases[phraseIndex].length) {
+          typewriterDisplay.textContent +=
+            typewriterPhrases[phraseIndex].charAt(charIndex);
+          charIndex++;
+          setTimeout(typeWriter, typingSpeed);
+        } else {
+          setTimeout(eraseWriter, delayBetweenPhrases);
+        }
+      }
+
+      function eraseWriter() {
+        if (charIndex > 0) {
+          typewriterDisplay.textContent = typewriterPhrases[
+            phraseIndex
+          ].substring(0, charIndex - 1);
+          charIndex--;
+          setTimeout(eraseWriter, erasingSpeed);
+        } else {
+          phraseIndex = (phraseIndex + 1) % typewriterPhrases.length;
+          setTimeout(typeWriter, typingSpeed);
+        }
+      }
+
+
+      window.addEventListener("load", typeWriter);
+
+      const inviteCode = "hFayxSrUWF";
+
+      async function updateDiscordCounts() {
+        try {
+          const res = await fetch(`https://discord.com/api/v9/invites/hFayxSrUWF?with_counts=true`);
+          const data = await res.json();
+          document.getElementById("onlineCount").textContent =
+            data.approximate_presence_count || "N/A";
+          document.getElementById("totalCount").textContent =
+            data.approximate_member_count || "N/A";
+        } catch (e) {
+          console.error("Discord data error:", e);
+        }
+      }
+
+      updateDiscordCounts();
+
+    </script>
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
+      integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
+      data-cf-beacon='{"version":"2024.11.0","token":"52dced21dc2146af83630f32591f369a","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
